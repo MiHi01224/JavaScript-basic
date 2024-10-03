@@ -11,9 +11,26 @@
     <div>
         <h1 id="heading">練習の見出し</h1>
         <p id="elem">変化させたい要素</p>
+        <img id="image" src="https://picsum.photos/200/300?image=0">
     </div>
 
     <script>
+        const image =document.getElementById('image');
+        let src=image.getAttribute('src');
+
+
+        image.addEventListener('mouseover',function(){
+            image.setAttribute('src','https://picsum.photos/200/300?image=100');
+                    console.log('ほばー！');
+        })
+
+        image.addEventListener('mouseout',function(){
+            image.setAttribute('src',src);
+                    console.log('のっとほばー！');
+        })
+    </script>
+
+    <!-- <script>
         const elem =document.getElementById('elem');
         const heading =document.getElementById('heading')
 
@@ -33,7 +50,7 @@
 
         heading.style.fontSize='50px';
         heading.style.border='solid 10px #ff0000';
-    </script>
+    </script> -->
 </body>
 
 </html>
