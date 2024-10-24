@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-click</title>
+</head>
+<body>
+    <img id="click" src="https://trident.takagino.net/doc2024/javascript/assets/03/monster.png" alt="">
+    <p id="hp">HP:10</p>
+
+    <script>
+        let x = 10;
+        const click = document.getElementById("click");
+        const hp =document.getElementById("hp");
+
+
+            click.addEventListener('click' ,function(){
+                if (x > 0) {
+                hp.innerHTML = `HP:${x -= 1}`;
+                }
+            })
+
+    </script>
+</body>
+</html>

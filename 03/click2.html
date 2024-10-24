@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02-click</title>
+</head>
+<body>
+    <img id="click" src="https://trident.takagino.net/doc2024/javascript/assets/03/monster.png" alt="">
+    <p id="hp">０回</p>
+
+    <script>
+        let n = 30;
+        let x = 0;
+        const click = document.getElementById("click");
+        const hp =document.getElementById("hp");
+
+
+            click.addEventListener('click' ,function(){
+                if (x === n) {
+                    hp.innerHTML = `${n}回達成！クリア！`;
+                } else if (x < n) {
+                    hp.innerHTML = `${x += 1}回`;
+                }
+                if(x % 10 == 0){
+                    hp.innerHTML = `${x}回達成、おめでとう！`;
+                }
+            })
+
+    </script>
+</body>
+</html>
