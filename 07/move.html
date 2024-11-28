@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字列</title>
+</head>
+<body>
+    <body>
+        <div>
+            <button id="right">→</button>
+        </div>
+
+        <img id="monster" src="https://pbs.twimg.com/media/EXae-7lWkAANYU6.png" alt="">
+
+        <script>
+            const right = document.getElementById('right');
+            const monster = document.getElementById('monster');
+            let x = 0;
+            let xs =10;
+
+            right.addEventListener('click',function(){
+                x += xs;
+                monster.style.transform =`translateX(${x}px)`;
+            })
+
+        </script>
+    </body>
+
+</body>
+</html>

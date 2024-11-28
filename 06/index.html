@@ -10,11 +10,23 @@
 
     <script>
 
-        const fruits =['apple','orange','grape']
-        console.log(fruits[fruits.length -1]);
+        const fruits =['apple','orange','grape'];
 
-        const empty =[]
-        console.log(empty);
+        for (let i = 0; i < fruits.length; i++){
+            console.log(`${i}番目の値は、${fruits[i]}です。`)
+        }
+
+        const num =[5,10,15,20,25,30];
+
+        let sum = 0;
+
+        for (let i = 0; i < num.length; i++){
+            if(i == 0||i == num.length-1){
+
+            }
+            sum += num[i];
+            console.log(sum);
+        }
 
 
     </script>
