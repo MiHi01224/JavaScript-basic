@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>関数</title>
+</head>
+<body>
+
+<script>
+    // function testFunc(val1=10,val2=20){
+    //     return val1+val2;
+    // }
+
+    // console.log(testFunc());
+    // testFunc(30,40);
+
+
+    // let doller = changeDoller(100);
+    //     console.log(`${doller}ドル`);
+
+    //     function changeDoller(yen = doller) {
+    //         return yen*1.5;
+    //     }
+
+    // let text = setText("takagi");
+    //     console.log(text);
+
+    //     function setText(name) {
+    //         return `Hello!${name}`
+    //     }
+
+    // const setZero =(num)=>{
+    //     if (num >=0 && num < 10){
+    //         return `0${num}`
+    //     } else {
+    //         return num
+    //     }
+    // };
+
+    // console.log(setZero(1));
+
+
+    let value = [5, 10, 15, 20, 25];
+    const getAverage =(val)=>{
+        let ave = 0;
+        for(let i = 0; i < val.length; i++){
+            ave += val[i];
+        }
+        return ave/val.length;
+    }
+
+    console.log(getAverage(value));
+
+
+
+
+
+</script>
+</body>
+</html>
