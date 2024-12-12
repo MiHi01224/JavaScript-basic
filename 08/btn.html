@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ボタン</title>
+</head>
+<body>
+    <button class="number">1</button>
+    <button class="number">2</button>
+    <button class="number">3</button>
+    <button class="random">ランダム</button>
+    <p class="result"></p>
+
+    <script>
+        const words = ["1.apple", "2.banana", "3.orange"];
+        const result = document.querySelector(".result");
+        const randomBtn = document.querySelector(".random");
+        const numberBtn = document.querySelectorAll(".number");
+        let s;
+        const getWord = (num) => {
+            result.innerHTML = words[num];
+        };
+
+        s = Math.floor(Math.random() * words.length)
+            getWord(s);
+
+        randomBtn.addEventListener("click",() => {
+            s = Math.floor(Math.random()*words.length)
+            getWord(s);
+        })
+
+        for (let i = 0; i < numberBtn.length; i++) {
+        numberBtn[i].addEventListener("click", (e) => {
+          const num = e.target.innerHTML - 1;
+          getWord(num);
+        });
+      } for (let i = 0; i < numberBtn.length; i++) {
+            numberBtn[i].addEventListener("click", (e) => {
+                const num = e.target.innerHTML - 1;
+                getWord(num);
+            });
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

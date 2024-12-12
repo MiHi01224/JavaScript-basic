@@ -6,6 +6,9 @@
     <title>関数</title>
 </head>
 <body>
+    <h1>見出し</h1>
+    <p>本文</p>
+    <button>ボタン</button>
 
 <script>
     // function testFunc(val1=10,val2=20){
@@ -41,17 +44,60 @@
     // console.log(setZero(1));
 
 
-    let value = [5, 10, 15, 20, 25];
-    const getAverage =(val)=>{
-        let ave = 0;
-        for(let i = 0; i < val.length; i++){
-            ave += val[i];
-        }
-        return ave/val.length;
+    // let value = [5, 10, 15, 20, 25];
+    // const getAverage =(val)=>{
+    //     let ave = 0;
+    //     for(let i = 0; i < val.length; i++){
+    //         ave += val[i];
+    //     }
+    //     return ave/val.length;
+    // }
+
+    // console.log(`${value} の平均値は ${getAverage(value)}`);
+
+    // const clickEvent = (element) => {
+    //     console.log(element);
+    //     element.style.color = "#0f0"
+    // };
+
+    // window.addEventListener("click",(e) => {
+    //     clickEvent(e.target);
+    // });
+
+    // let count = 0;
+    // let timer;
+    // const countUp = () => {
+    //     console.log(count++);
+
+    //     if(count > 5){
+    //         clearInterval(timer);
+    //     };
+    // };
+
+    // timer = setInterval(countUp, 1000);
+
+    // let count = 0;
+    // let timer;
+    // let r;
+    // let g;
+    // let b;
+    // const bgColor = () => {
+    //     r = Math.floor(Math.random() * 256);
+    //     g = Math.floor(Math.random() * 256);
+    //     b = Math.floor(Math.random() * 256);
+    //     document.body.style.background = `rgb(${r},${g},${b})`;
+    // }
+
+    //     timer = setInterval(bgColor, 1000);
+
+    let count = 0;
+
+    const countUp = () => {
+        console.log(count++);
+        setTimeout(countUp, 1000);
     }
 
-    console.log(getAverage(value));
-
+    setTimeout(countUp, 1000);
 
 
 
