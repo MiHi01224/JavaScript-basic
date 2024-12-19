@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ストップゲーム</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+
+        button{
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        p#result{
+            margin:20px;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+<body>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+    <p id="result">0</p>
+    <p id="message"></p>
+    <p id="smessage"></p>
+
+    <script>
+        const start =document.getElementById('start');
+        const stop = document.getElementById('stop');
+        const result = document.getElementById('result');
+        const message = document.getElementById('message');
+        const smessage = document.getElementById('smessage');
+        let r;
+        let g;
+        let b;
+        let n;
+        let timer;
+
+        let s = 100;
+        let y =5;
+
+        const gameTimer = () => {
+            r = Math.floor(Math.random() * 256);
+            g = Math.floor(Math.random() * 256);
+            b = Math.floor(Math.random() * 256);
+            result.style.color = `rgb(${r},${g},${b}`;
+
+            n+=1;
+            clearTimeout(timer);
+            timer = setTimeout(gameTimer, 50);
+            result.innerHTML =n;
+            console.log(n);
+        }
+
+        message.innerHTML =`STOPボタンを押して止めてね！STARTで始まるよ！`;
+        smessage.innerHTML=`${s}で止めてね！`
+
+        start.addEventListener('click',() =>{
+            message.innerHTML = `STOPボタンを押して止めてね！どきどき…`
+            smessage.innerHTML = `${s}で止めてね！`
+            result.style.color = `#000000`;
+            n=0;
+            timer = setTimeout(gameTimer, 0);
+        })
+
+        stop.addEventListener('click', () => {
+            clearTimeout(timer);
+            if(n == s){
+                message.innerHTML='ぴったり！すごい！';
+                result.style.color = `#ff0000`;
+            } else if(s-y <= n && n <= s+y){
+                message.innerHTML = '中途半端が一番おもんないよ';
+            } else if (n <= s/3 || n >= s*2){
+                message.innerHTML = '止める気あります？';
+            } else{
+                message.innerHTML = '残念…';
+            }
+
+            s = Math.floor(Math.random() * 10)*10+50;
+            smessage.innerHTML = `次は${s}で止めてね！`
+        })
+
+    </script>
+</body>
+</html>

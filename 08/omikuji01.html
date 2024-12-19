@@ -26,6 +26,7 @@
         const random = () => {
             n = Math.floor(Math.random()*files.length);
             pic.setAttribute('src', `${url}${files[n]}`);
+            clearTimeout(timer);
             timer = setTimeout(random, 100);
         };
 

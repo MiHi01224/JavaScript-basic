@@ -26,7 +26,8 @@
         const random = () => {
             console.log(n);
             pic.setAttribute('src', `${url}${files[n++]}`);
-            timer = setTimeout(random, 100);
+            clearTimeout(timer);
+            timer = setTimeout(random, 500);
 
             if (n > files.length-1) {
                  n=0;
