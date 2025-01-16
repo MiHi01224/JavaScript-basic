@@ -6,6 +6,46 @@
     <title>オブジェクトについて</title>
 </head>
 <body>
+    <script>
+        // const obj = {
+        //     int:123,
+        //     str:"りんご",
+        //     bool:false,
+        //     obj:{
+        //         sub:"ばなな",
+        //     },
+        //     名前:"高木",
+        //     play: () => {
+        //         console.log("play!");
+        //     },
+        // };
+        // const empty ={};
+        // console.log(empty);
+
+        /* 練習 */
+
+        const date = {
+            path: "https://dotown.maeda-design-room.net/wp-content/uploads/2022/01/thing_chick_01.png",
+            width:200,
+            color: "#f00",
+            play: () => {
+                console.log("play!");
+            },
+        }
+        const img = document.createElement("img");
+        img.setAttribute("src", date["path"]);
+        img.setAttribute("width", date["width"]);
+        img.style.border = `6px solid ${date["color"]}`;
+
+        document.body.append(img);
+
+        img.addEventListener("click", () => {
+            date.play();
+        });
+
+
+
+    </script>
 
 </body>
 </html>
