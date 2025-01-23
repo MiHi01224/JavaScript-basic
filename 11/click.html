@@ -9,17 +9,11 @@
 
 <body>
     <h1>click game</h1>
-    <div class="monster">
-        <p class="name">名前</p>
-        <img class="pic" src="#" width="200" />
-        <p class="hp">HP:</p>
-    </div>
+    <div class="monster"></div>
 
     <script>
-        const monster = document.querySelector(".monster");
-        const name = document.querySelector(".name");
-        const pic = document.querySelector(".pic");
-        const hp = document.querySelector(".hp");
+
+
         const obj = {
             name: "ピンクカバ",
             pic: "https://dotown.maeda-design-room.net/wp-content/uploads/2022/01/thing_hippo_02.png",
@@ -28,6 +22,31 @@
                 alert("クリア！");
             },
         };
+
+        const monster = document.querySelector(".monster");
+
+        const name = document.createElement("p");
+        name.textContent = obj.name;
+        monster.append(name);
+
+        const pic =document.createElement("img");
+        pic.setAttribute("src",obj.pic);
+        pic.setAttribute("width",200);
+
+        pic.addEventListener('click',()=>{
+            if (obj.hp > 0) {
+                hp.textContent = `HP:${--obj.hp}`
+                if(obj.hp == 0){
+                    obj.clear();
+                }
+            }
+        });
+
+        monster.append(pic);
+
+        const hp = document.createElement("p");
+        hp.textContent = `HP:${obj.hp}`;
+        monster.append(hp);
 
 
 
